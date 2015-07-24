@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+    <script>
+        var numMessg;
+        function addnum(num){
+            numMessg = document.getElementById("cal");
+            numMessg.value += num;
+
+        }
+
+        function addOperator(op){
+            numMessg = document.getElementById("cal");
+            var temp=numMessg.value[numMessg.value.length-1];
+            if ( [' ','+','-','*','/','.'].toString().indexOf(temp) == -1){
+                numMessg.value += op;
+            }else{
+                //alert("Wrong input with " + op);
+            }
+        }
+
+        function getResult(){
+            numMessg = document.getElementById('cal');
+            var temp = eval(numMessg.value)
+            if(Math.abs(temp) <= 999999999999999){
+                numMessg.value=temp.toString().substring(0,15);
+                return;
+            }else{
+                var len;
+                var arr;
+                len=temp.toString().length-1;
+                arr = temp.toString().split('');
+                arr[0]+='.';
+                numMessg.value=arr.join('').substring(0,6)+'*10^'+len.toString();
+
+            }
+            //numMessg.value = temp;
+            //numMessg.value = temp.substring(0,7);
+
+        }
+
+        function clearContent(){
+            document.getElementById("cal").value='';
+
+        }
+
+        function delLast(){
+            var temp = document.getElementById("cal").value;
+            temp = temp.split('')
+            temp.pop();
+            temp = temp.join('');
+            numMessg.value = temp;
+        }
+
+    </script>
+    <style>
+        .bigButtom{
+            height: 50px;
+            width: 50px
+        }
+        td input{
+            height: 50px;
+            width: 40px;
+            font-family: helvetica;
+            font-size: 25px;
+        }
+        #cal{
+            height: 50px;
+            width: 220px;
+            text-align: right;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h3 align="center" style="font-family: helvetica">Calculator</h3>
+    <table align="center">
+        <tr>
+            <td colspan="5"><input id="cal" type="text" value="" disabled/></label></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="addnum('7')"></td>
+            <td><input type="button" value="8" onclick="addnum('8')"></td>
+            <td><input type="button" value="9" onclick="addnum('9')"></td>
+            <td><input type="button" value="/" onclick="addOperator('/')"></td>
+            <td><input class="bigButtom" type="button" value="clear" onclick="clearContent()" style="font-size: 15px"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="addnum('4')"></td>
+            <td><input type="button" value="5" onclick="addnum('5')"></td>
+            <td><input type="button" value="6" onclick="addnum('6')"></td>
+            <td><input type="button" value="*" onclick="addOperator('*')"></td>
+            <td><input class="bigButtom" type="button" value="delete" onclick="delLast()" style="font-size: 14px ;text-align: left"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="addnum('1')"></td>
+            <td><input type="button" value="2" onclick="addnum('2')"></td>
+            <td><input type="button" value="3" onclick="addnum('3')"></td>
+            <td><input type="button" value="-" onclick="addOperator('-')"></td>
+            <td><input class="bigButtom" type="button" value="(" onclick="addnum(value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="addnum('0')"></td>
+            <td><input type="button" value="." onclick="addOperator('.')"></td>
+            <td><input type="button" value="=" onclick="getResult()"></td>
+            <td><input type="button" value="+" onclick="addOperator('+')"></td>
+            <td><input class="bigButtom" type="button" value=")" onclick="addnum(value)"></td>
+        </tr>
+    </table>
+</body>
+</html>
