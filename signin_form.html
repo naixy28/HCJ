@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .must{
+            color: red;
+        }
+
+        table{
+            background-color: lightblue;
+            /*border: 1px;*/
+            border-color: cornflowerblue;
+        }
+
+    </style>
+
+    <script >
+        function submitForm(){
+            if(check()){
+                alert("success");
+            }
+        }
+        function check(){
+            if(form1.username.value==''){
+                alert("用户名必填！")
+                return false;
+            }else if(form1.username.value.search(/^([a-zA-Z](\d|[a-zA-Z])*)$/)!=0){
+                alert("用户名格式不匹配！")
+                return false;
+            }
+            if(form1.password.value==''){
+                alert("密码必填！")
+                return false;
+            }else if(form1.password.value.search(/^[a-zA-Z0-9]+$/)!=0){
+                alert("密码格式不匹配！")
+                return false;
+            }
+            if(form1.password_check.value==''){
+                alert("确认密码必填！")
+                return false;
+            }else if(form1.password_check.value != form1.password.value){
+                alert("密码输入不一致")
+            }
+            if(form1.birth.value==''){
+                alert("生日必填！")
+                return false;
+            }else if(form1.birth.value.search( /^\d{4}-\d{2}-\d{2}$/)!=0){
+                alert("生日格式不匹配！")
+                return false;
+            }
+            if(form1.idnum.value==''){
+                alert("身份证必填！")
+                return false;
+            }else if(form1.idnum.value.search( /^(\d{15}|\d{18}|\d{17}[Xx])$/)!=0){
+                alert("身份证格式不匹配！")
+                return false;
+            }
+            if(form1.postnum.value==''){
+                alert("邮编必填！")
+                return false;
+            }else if(form1.postnum .value.search( /^\d{6}$/)!=0){
+                alert("邮编格式不匹配！")
+                return false;
+            }
+            if(form1.email.value==''){
+                alert("电子邮箱必填！")
+                return false;
+            }else if(form1.email.value.search( /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)!=0){
+                alert("电子邮箱格式不匹配！")
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<form name="form1" id="form11">
+    <table align="center" border="1px"  cellpadding="10px"  >
+        <caption align="center" style="color: red;">用户注册信息</caption>
+        <tr>
+            <td class="must">用户名：</td>
+            <td><input type="text" name="username"><span style="color: red;">必填项&nbsp;</span>用户名为数字或字母且字母开头</td>
+        </tr>
+        <tr>
+            <td class="must">密码：</td>
+            <td><input type="password" name="password">长度>8</td>
+        </tr>
+        <tr>
+            <td class="must">确认密码：</td>
+            <td><input type="password" name="password_check"></td>
+        </tr>
+        <tr>
+            <td>真实姓名：</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td class="must">出生日期：</td>
+            <td><input type="text" name="birth">yyyy-mm-dd</td>
+        </tr>
+        <tr>
+            <td class="must">身份证号码：</td>
+            <td><input type="text" name="idnum">18位有效数字</td>
+        </tr>
+        <tr>
+            <td>地址：</td>
+            <td><input type="text" name="address"></td>
+        </tr>
+        <tr>
+            <td class="must">邮编：</td>
+            <td><input type="text" name="postnum"></td>
+        </tr>
+        <tr>
+            <td class="must">电子信箱：</td>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr><td colspan="2" align="center">
+            <input type="button" value="提交" onclick="submitForm()">
+            <input type="reset" value="重置">
+        </td></tr>
+    </table>
+
+
+
+</form>
+</body>
+</html>

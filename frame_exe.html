@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>frame exercise</title>
+    <style>
+        #banner{
+            background-color: aquamarine;
+        }
+        #menu{
+            background-color: antiquewhite;
+        }
+        #content{
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<frameset rows="20%,*" >
+    <frame id="banner">
+    <frameset cols="20%,*">
+        <frame id="menu">
+        <frame src="calculator.html" id="content">
+    </frameset>
+</frameset>
+
+</html>

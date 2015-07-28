@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+    <form name="radio_exe" method="post" >
+        <label for="banana" id="banana_label"><input id="banana" type="radio" name="fruit" value="banana" checked>香蕉</label>
+        <label for="basketball" id="basketball_label"><input id="basketball" type="radio" name="sports" value="basketball" checked>篮球</label>
+        <label for="juice" id="juice_label" ><input id="juice" type="radio" name="drink" value="juice" checked>果汁</label><br/>
+
+        <label for="apple" id="apple_label"><input id="apple" type="radio" name="fruit" value="apple">苹果</label>
+        <label for="football" id="football_label"><input id="football" type="radio" name="sports" value="football">足球</label>
+        <label for="coke" id="coke_label"><input id="coke" type="radio" name="drink" value="coke">可乐</label><br/>
+
+        <label for="orange" id="orange_label"><input id="orange" type="radio" name="fruit" value="orange">橘子</label>
+        <label for="volleyball" id="volleyball_label"><input id="volleyball" type="radio" name="sports" value="volleyball">排球</label>
+        <label for="water" id="water_label"><input id="water" type="radio" name="drink" value="water">水</label><br/>
+        <input type="button" onclick="output()" value="button">
+    </form>
+<script>
+    function output(){
+        alert(radio_exe.fruit.value+document.getElementById(radio_exe.fruit.value+'_label').innerText+radio_exe.sports.value+document.getElementById(radio_exe.sports.value+'_label').innerText+radio_exe.drink.value+document.getElementById(radio_exe.drink.value+'_label').innerText);
+//        alert(radio_exe.sports.value+document.getElementById(radio_exe.sports.value+'_label').innerText);
+//        alert(radio_exe.drink.value+document.getElementById(radio_exe.drink.value+'_label').innerText);
+
+    }
+</script>
+</body>
+</html>

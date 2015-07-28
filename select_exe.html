@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form name="select_exe">
+    <select name="fruit" id="fruit" onchange="display_selected()">
+        <option id="banana" value="banana">香蕉</option>
+        <option id="apple" value="apple">苹果</option>
+    </select>
+    文本
+    <input type="text" id="text" value="">
+    值
+    <input type="text" id="text_value" value="">
+    <input type="button" value="add_option" onclick="add_option()">
+    下拉框位置
+    <input type="text" id="pos" value="">
+    <input type="button" value="delete_option" onclick="del_option_by_index()">
+</form>
+
+<script>
+    function add_option(){
+        var val = document.getElementById("text_value").value;
+        var txt = document.getElementById("text").value;
+        if(val === ""|| txt === ""){
+            alert("missing input");
+            return;
+        }
+        var sel = document.getElementById("fruit");
+        var opp = new Option(txt,val);
+        sel.add(opp);
+
+    }
+
+    function del_option_by_index(){
+        var pos = document.getElementById("pos");
+        var sel = document.getElementById("fruit");
+        if(pos.value === ""){
+            alert("missing input");
+            return;
+        }else if( pos.value >= sel.options.length || pos.value < 0){
+            alert("index out of range");
+        }
+
+        sel.options.remove(pos.value);
+
+    }
+
+    function display_selected(){
+        var sel = document.getElementById("fruit");
+        var index = sel.selectedIndex;
+        if (index === -1){
+            alert("no option");
+            return;
+        }
+        alert("值为:"+sel[index].value+'\n显示的文本为:'+sel[index].innerText);
+    }
+</script>
+</body>
+</html>

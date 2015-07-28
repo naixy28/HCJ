@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2><span id="red" style="color: red;">American Metric</span><span id="blue" style="color: blue;">电子产品调查表</span></h2>
+<form>
+    请输入您的姓名：<input type="text" name="name" id="name" width="50"/><br/>
+    请输入您的购买日期：<input type="text" name="year" id="year"  maxlength="4" size="4"/>年
+    <select id="month" name="month">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+    </select>月
+    <select id="day" name="day">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+  </select>日<br/>
+    请输入您的电子邮件地址：<input type="text" size="40" id="email" name="email"><br/>
+    您是否查看过我们的在线产品目录？
+    <label for="yes"><input type="radio" id="yes" name="flag" checked="checked">是</label>
+    <label for="no"><input type="radio" id="no" name="flag">否</label>
+    如果查看过，您对哪些产品有兴趣购买？（选择提供的产品）
+    <input type="checkbox" name="tv" value="tv">电视机&nbsp;
+    <input type="checkbox" name="au" value="au">音频设备&nbsp;
+    <input type="checkbox" name="ve" value="ve">视频设备&nbsp;
+    <input type="checkbox" name="ca" value="ca">相机<br/>
+    在填写订单之前，您还有喝什么问题、意见或建议？<br/>
+    <textarea name="advice" cols="30" rows="10">您的输入：</textarea><br/>
+    <input type="submit" value="提交"/>
+    <input type="reset" value="重置"/>
+</form>
+</body>
+</html>
